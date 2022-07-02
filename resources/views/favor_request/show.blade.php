@@ -1,7 +1,8 @@
 @extends('layouts.outer')
 
 @section('content')
-sadasdas
+
+
     <h3>{{ $favor_request->title }}</h3>
     <p>{{ $favor_request->description }}</p>
     {{-- <p>{{ $favor_request -> area -> name }}</p> --}}

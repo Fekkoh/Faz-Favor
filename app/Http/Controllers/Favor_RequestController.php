@@ -40,13 +40,13 @@ class Favor_RequestController extends Controller
     public function store(Request $request)
     {
         $favores = new Favor_Request();
-        $favores->title=request('title');
-        $favores->description=request('description');
-        $favores->date=request('date');
-        $favores->hour=request('hour');
-        $favores->finished=0;
-        $favores->user_request_id=Auth::id();
-        $favores->area_id=request('area');
+        $favores->title = request('title');
+        $favores->description = request('description');
+        $favores->date = request('date');
+        $favores->hour = request('hour');
+        $favores->finished = 0;
+        $favores->user_request_id = Auth::id();
+        $favores->area_id = request('area');
         $favores->save();
         return redirect('/');
     }
@@ -59,6 +59,7 @@ class Favor_RequestController extends Controller
      */
     public function show(Favor_Request $favor_request)
     {
+
         return view('favor_request.show', compact('favor_request'));
     }
 

@@ -58,7 +58,7 @@ Route::post('/favor_request', [App\Http\Controllers\Favor_RequestController::cla
 Route::get('/favor_request/create', [App\Http\Controllers\Favor_RequestController::class, 'create'])->middleware('auth')->name('favor_request.create');
 /* Route::get('/search', [App\Http\Controllers\Favor_RequestController::class, 'index'])->name('search'); */
 Route::get('/search', [App\Http\Controllers\AreaController::class, 'index'])->name('search');
-Route::get('/favor/{favor}', [App\Http\Controllers\Favor_RequestController::class, 'show'])->name('favor_request.show');
+Route::get('/favor/{favor_request}', [App\Http\Controllers\Favor_RequestController::class, 'show'])->name('favor_request.show');
 /* Route::get('/favor/{favor}', [App\Http\Controllers\AreaController::class, 'show'])->name('area.show'); */
 
 /* Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout'); */
