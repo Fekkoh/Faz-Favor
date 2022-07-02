@@ -1,26 +1,43 @@
 @extends('layouts.outer')
 
 @section('content')
-      <!-- laptop1 -->
-      <div class="laptop1">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-7">
-                  <div class="laptop1_img">
-                     <figure><img src="images/leptop.jpg" alt="#"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-5">
-                  <div class="titlepage">
-                     <h2>laptop</h2>
-                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                     <a class="read_more" href="#">Read More</a>
-                  </div>
-               </div>
+    <!-- laptop1 -->
+        <div class="favor_page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 favor_request" id="over">
+                        <div class="favor_image">
+                            <img src="assets/images/about.jpg" alt="#"/>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 favor_request botao_favor_request" id="over" style="height: 150px">
+                        <h6>Utilizador</h6>
+                        <div class="utilizador">
+                            <p>Nome do Utilizador</p>
+                        </div>
+                        <a class="" href="#">Ver número</a>
+                    </div>
+                </div>
+
+                <div class="row ">
+                    <div class="col-md-7 favor_request">
+                        <p class="data">Publicado "Data" às "Hora"</p>
+                        <h1 class="titulo">Título</h1>
+                        <p class="area">Área</p>
+                        <hr>
+                        <div class="descricao">
+                            <h3>Descrição</h3>
+                            <p>"Descrição"</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-      <!-- end laptop1 -->
+        </div>
+    <!-- end laptop1 -->
+
+    <script>
+    </script>
 @endsection
 
 
