@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Area;
 use App\Models\Favor_Request;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request; /*Já tinha*/
 
 class AreaController extends Controller
 {

@@ -8,7 +8,7 @@
                         <div class="col-md-6">
                             <div class="text-bg">
                                 <h1>Faz Favor</h1>
-                                <p style="color: white">Faz Favor é um site para as pessoas poderem-se ajudar umas às outras sem qualquer custo. </p>
+                                <p style="color: white">Faz Favor é um site para as pessoas poderem-se ajudar umas às outras sem qualquer custo.</p>
                                 <a href="{{ route('favor_request.create')}}">Preciso de um favor</a> <a href="/contact">Quero ajudar</a>
                             </div>
                         </div>

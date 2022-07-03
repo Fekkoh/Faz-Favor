@@ -59,12 +59,11 @@
                         </div>
                     </div>
                     <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
-                        <nav class="navigation navbar navbar-expand-md navbar-dark ">
-                            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false"
-                                aria-label="Toggle navigation">
+                        <nav class="navigation navbar navbar-expand-md navbar-dark">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
+
                             <div class="collapse navbar-collapse" id="navbarsExample04">
                                 <ul class="navbar-nav mr-auto">
                                     <li class="nav-item">
@@ -80,28 +79,65 @@
                                         <a class="nav-link" href="/search"><i class="fa fa-search"
                                                 aria-hidden="true"></i></a> --}}
                                     </li>
-                                    <li class="nav-item d_none">
-                                        <a class="nav-link" href="/login">
-                                            {{-- @if (session('status'))
-                                                <div class="alert alert-success" role="alert">
-                                                    {{ session('status') }}
-                                                </div>
-                                            @endif --}}
-
-
+                                    <li class="nav-item dropdown">
+                                         {{-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+                                             @if (session('status'))
+                                                    <div class="alert alert-success" role="alert">
+                                                        {{ session('status') }}
+                                                    </div>
+                                                @endif
 
                                             @auth
                                                 {{Auth::user()->name}}
-                                                <ul>
-                                                    <li><a href="/logout">Logout</a></li>
-                                                </ul>
                                             @endauth
 
                                             @guest
                                                 Login
                                             @endguest
-
                                         </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarsExample04">
+                                            <a class="dropdown-item" href="#">
+                                                Meu perfil
+                                            </a>
+                                            <a class="dropdown-item" href="{{ route('logout')}}">
+                                                Logout
+                                            </a>
+
+                                            <form action="{{ route('logout')}}" method="POST">
+                                                @csrf
+                                            </form>
+                                        </div> --}}
+
+                                        @guest
+                                            @if (Route::has('login'))
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                                </li>
+                                            @endif
+
+                                            @else
+                                                <li class="nav-item dropdown">
+                                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                        {{ Auth::user()->name }}
+                                                    </a>
+
+                                                    <div class="dropdown-menu" aria-labelledby="navbarsExample04">
+                                                        <a class="dropdown-item" href="#">
+                                                            Meu perfil
+                                                        </a>
+                                                        <a class="dropdown-item" href="#">
+                                                            Os meus favores
+                                                        </a>
+                                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                            {{ __('Logout') }}
+                                                        </a>
+
+                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                        @csrf
+                                                        </form>
+                                                    </div>
+                                                </li>
+                                        @endguest
                                     </li>
                                 </ul>
                             </div>
@@ -131,13 +167,12 @@
                         </ul>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                        <h3>About Us</h3>
+                        <h3>Sobre Nós</h3>
                         <ul class="about_us">
-                            <li>dolor sit amet, consectetur<br> magna aliqua. Ut enim ad <br>minim veniam, <br>
-                                quisdotempor incididunt r</li>
+                            <li>Faz Favor é um site para as pessoas poderem-se ajudar umas às outras sem qualquer custo.</li>
                         </ul>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                    {{-- <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                         <h3>Contact Us</h3>
                         <ul class="conta">
                             <li>dolor sit amet,<br> consectetur <br>magna aliqua.<br> quisdotempor <br>incididunt ut e
@@ -151,7 +186,7 @@
                                 name="Enter your email">
                             <button class="sub_btn">subscribe</button>
                         </form>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <div class="copyright">

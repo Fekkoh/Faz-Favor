@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Favor_Granted;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request; /*Já tinha*/
 
 class Favor_GrantedController extends Controller
 {

@@ -1,3 +1,4 @@
+
 /*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
 
 
@@ -857,8 +858,7 @@ ul.btn li:last-child {
 /** footer **/
 
 .footer {
-     background: url(../images/footer.jpg);
-     background-repeat: no-repeat;
+     background-color: #252527;
      background-size: 100% 100%;
      padding-top: 115px;
      text-align: center;
@@ -1283,7 +1283,7 @@ ul.social_icon li a:hover {
         color: #fff;
         font-weight: 500;
         padding: 5px 0px;
-        width: 35%;
+        width: 40%;
         max-width: 215px;
         text-align: center;
         display: block;
@@ -1310,10 +1310,6 @@ ul.social_icon li a:hover {
         font-size: 40px;
     }
 
-    .titulo h3{
-        font-size: 20px;
-    }
-
     .area{
         font-weight: normal;
     }
@@ -1322,5 +1318,3 @@ ul.social_icon li a:hover {
         margin-top: 30px;
         font-weight: normal;
     }
-
-
