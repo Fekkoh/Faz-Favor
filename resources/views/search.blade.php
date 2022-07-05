@@ -13,27 +13,43 @@
                     </div>
                 </form>
 
-                <div class="">
+                <div class="row">
                     @foreach ($areas as $area)
-                        <figure style="text-align: center;">
-                            <div id="circle">
-                                <div style="display: flex; justify-content: center; align-items: center;">
-                                    <img src="assets/images/{{ $area -> name }}.png" alt="" width="70px">
+                        <div class="col-md-4">
+                            <figure style="text-align: center;">
+                                <div id="circle">
+                                    <div class="icon_area" style="display: flex; justify-content: center; align-items: center;">
+                                        <img src="assets/images/{{ $area -> name }}.png" alt="" width="70px">
+                                    </div>
                                 </div>
-                            </div>
-                            <figcaption>{{ $area -> name }}</figcaption>
-                        </figure>
+                                <figcaption>{{ $area -> name }}</figcaption>
+                            </figure>
+                        </div>
                     @endforeach
                 </div>
 
                 @foreach ($favores as $favor)
                     <a href="/favor/{{ $favor -> id }}" class="favor">
-                        <div class="favor">
-                            <h3>{{ $favor -> title }}</h3>
-                            <p>{{ $favor -> description }}</p>
-                            <p>{{ $favor -> area -> name }}</p>
-                            <p>{{ $favor -> date }}</p>
-                            <p>{{ $favor -> hour }}</p>
+                        <div class="col-md-12">
+                            <div class="favor row">
+                                <div class="col-md-12">
+                                    <h3>{{ $favor -> title }}</h3>
+                                </div>
+                            </div>
+                            <div class="favor row">
+                                <div class="col-md-12">
+                                    <p>{{ $favor -> area -> name }}</p>
+                                    <p>{{ $favor -> description }}</p>
+                                </div>
+                            </div>
+                            <div class="favor row">
+                                <div class="col-md-2">
+                                    <p>{{ $favor -> date }}</p>
+                                </div>
+                                <div class="col-md-1">
+                                    <p>{{ $favor -> hour }}</p>
+                                </div>
+                            </div>
                         </div>
                     </a>
                 @endforeach

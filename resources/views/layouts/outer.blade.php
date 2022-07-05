@@ -128,7 +128,10 @@
                                                         <a class="dropdown-item" href="#">
                                                             Os meus favores
                                                         </a>
-                                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                        <a class="dropdown-item" href="#">
+                                                            Favores aceites
+                                                        </a>
+                                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" style="color: red">
                                                             {{ __('Logout') }}
                                                         </a>
 

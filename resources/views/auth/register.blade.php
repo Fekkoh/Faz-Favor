@@ -18,18 +18,6 @@
                         @csrf
                         <div class="row">
                             <div class="col-md-12">
-                                <input class="login-form @error('username') is-invalid @enderror" placeholder="Nome de Usuário"
-                                    type="text" name="username" value="{{ old('username') }}" required
-                                    autocomplete="username" autofocus id="username">
-
-                                @error('username')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-
-                            <div class="col-md-12">
                                 <input class="login-form @error('name') is-invalid @enderror" placeholder="Nome"
                                     type="text" name="name" value="{{ old('name') }}" required
                                     autocomplete="name" autofocus id="name">

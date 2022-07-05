@@ -16,7 +16,19 @@
                         <div class="utilizador">
                             <p>{{-- {{ $favor_request->user->name }} --}}Username</p>
                         </div>
-                        <a class="" href="#">Aceitar pedido</a>
+                        @auth
+                            @if (Auth::User()->id == Auth::User()->id)
+                                
+                            @else
+                                <a class="" href="#">
+                                    Aceitar pedido
+                                </a>
+                            @endif
+                        @endauth
+
+                        @guest
+
+                        @endguest
                     </div>
                 </div>
 
@@ -31,7 +43,7 @@
                             <p>{{ $favor_request->description }}</p>
                         </div>
                         <hr>
-                        <p>Preciso de ajuda dia {{ $favor_request->date }} às {{ $favor_request->hour }}</p>
+                        <p>Preciso de ajuda dia <b>{{ $favor_request->date }}</b> às <b>{{ $favor_request->hour }}</b></p>
                     </div>
                 </div>
             </div>
