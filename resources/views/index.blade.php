@@ -5,7 +5,7 @@
         <section class="banner_main" style="background-color: #5e5ab5">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-8" style="padding-left: 200px">
                             <div class="text-bg">
                                 <h1>Faz Favor</h1>
                                 <p style="color: white">Faz Favor é um site para as pessoas poderem-se ajudar umas às outras sem qualquer custo.</p>
@@ -13,7 +13,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="text_img" style="width: 200px">
                                 <figure><img src="assets/images/logo.png" alt="#"/></figure>
                             </div>

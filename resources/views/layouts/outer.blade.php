@@ -75,39 +75,8 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="/search">Quero ajudar</a>
                                     </li>
-                                    {{-- <li class="nav-item d_none">
-                                        <a class="nav-link" href="/search"><i class="fa fa-search"
-                                                aria-hidden="true"></i></a> --}}
-                                    </li>
+
                                     <li class="nav-item dropdown">
-                                         {{-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
-                                             @if (session('status'))
-                                                    <div class="alert alert-success" role="alert">
-                                                        {{ session('status') }}
-                                                    </div>
-                                                @endif
-
-                                            @auth
-                                                {{Auth::user()->name}}
-                                            @endauth
-
-                                            @guest
-                                                Login
-                                            @endguest
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarsExample04">
-                                            <a class="dropdown-item" href="#">
-                                                Meu perfil
-                                            </a>
-                                            <a class="dropdown-item" href="{{ route('logout')}}">
-                                                Logout
-                                            </a>
-
-                                            <form action="{{ route('logout')}}" method="POST">
-                                                @csrf
-                                            </form>
-                                        </div> --}}
-
                                         @guest
                                             @if (Route::has('login'))
                                                 <li class="nav-item">
@@ -142,6 +111,22 @@
                                                 </li>
                                         @endguest
                                     </li>
+
+                                    <?php
+                                        var_dump($favores);
+                                    ?>
+                                    {{-- <li class="nav-item dropdown">
+                                        <div class="dropdown-menu" aria-labelledby="navbarsExample04">
+                                            @foreach ($favores as $favor)
+                                                <a class="dropdown-item" href="#">
+                                                    {user} ofereceu-lhe ajuda no seu
+                                                <a href="/favor/{{ $favor -> id }}">favor</a>.
+                                                    <a href="">Aceitar</a>
+                                                    <a href="">Negar</a>
+                                                </a>
+                                            @endforeach
+                                        </div>
+                                    </li> --}}
                                 </ul>
                             </div>
                         </nav>
@@ -175,21 +160,6 @@
                             <li>Faz Favor é um site para as pessoas poderem-se ajudar umas às outras sem qualquer custo.</li>
                         </ul>
                     </div>
-                    {{-- <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                        <h3>Contact Us</h3>
-                        <ul class="conta">
-                            <li>dolor sit amet,<br> consectetur <br>magna aliqua.<br> quisdotempor <br>incididunt ut e
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                        <form class="bottom_form">
-                            <h3>Newsletter</h3>
-                            <input class="enter" placeholder="Enter your email" type="text"
-                                name="Enter your email">
-                            <button class="sub_btn">subscribe</button>
-                        </form>
-                    </div> --}}
                 </div>
             </div>
             <div class="copyright">

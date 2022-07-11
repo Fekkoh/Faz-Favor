@@ -17,13 +17,13 @@
                             <p>{{-- {{ $favor_request->user->name }} --}}Username</p>
                         </div>
                         @auth
-                            @if (Auth::User()->id == Auth::User()->id)
-                                
-                            @else
+                            {{-- @if (Auth::User()->id == Auth::User()->id)
+
+                            @else --}}
                                 <a class="" href="#">
                                     Aceitar pedido
                                 </a>
-                            @endif
+                            {{-- @endif --}}
                         @endauth
 
                         @guest

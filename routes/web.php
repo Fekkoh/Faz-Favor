@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
-
 Route::get('/', function () {
     return view('index');
 });
@@ -24,14 +20,6 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about');
 });
-
-/*Route::get('/search', function () {
-    return view('search');
-});*/
-
-/* Route::get('/favor_request', function () {
-    return view('favor_request');
-}); */
 
 /* Template */
 Route::get('/computer', function () {
@@ -54,11 +42,8 @@ Route::get('/product', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::post('/favor_request', [App\Http\Controllers\Favor_RequestController::class, 'store']);
-Route::get('/favor_request/create', [App\Http\Controllers\Favor_RequestController::class, 'create'])->middleware('auth')->name('favor_request.create');
 Route::get('/search', [App\Http\Controllers\AreaController::class, 'index'])->name('search');
+Route::post('/favor_request', [App\Http\Controllers\Favor_RequestController::class, 'store']);
 Route::get('/favor/{favor_request}', [App\Http\Controllers\Favor_RequestController::class, 'show'])->name('favor_request.show');
-/* Route::get('/favor/{favor}', [App\Http\Controllers\AreaController::class, 'show'])->name('area.show'); */
-/* Route::get('/search', [App\Http\Controllers\Favor_RequestController::class, 'index'])->name('search'); */
+Route::get('/favor_request/create', [App\Http\Controllers\Favor_RequestController::class, 'create'])->middleware('auth')->name('favor_request.create');
 
-/* Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout'); */

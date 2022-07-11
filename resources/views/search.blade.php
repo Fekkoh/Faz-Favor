@@ -36,16 +36,19 @@
                                     <h3>{{ $favor -> title }}</h3>
                                 </div>
                             </div>
+
                             <div class="favor row">
                                 <div class="col-md-12">
                                     <p>{{ $favor -> area -> name }}</p>
                                     <p>{{ $favor -> description }}</p>
                                 </div>
                             </div>
+
                             <div class="favor row">
                                 <div class="col-md-2">
                                     <p>{{ $favor -> date }}</p>
                                 </div>
+
                                 <div class="col-md-1">
                                     <p>{{ $favor -> hour }}</p>
                                 </div>
@@ -53,28 +56,6 @@
                         </div>
                     </a>
                 @endforeach
-
-
-                {{-- <table id="Table" class="table table-bordered table-striped">
-                    <tbody>
-                        <tr style="font-weight: bold; text-align: center;">
-                            <th>Titulo</th>
-                            <th>Data</th>
-                            <th>Hora</th>
-                            <th>Área</th>
-                            <th>Descrição</th>
-                        </tr>
-                        @foreach ($favores as $favor)
-                            <tr>
-                                <td>{{ $favor -> title }}</td>
-                                <td>{{ $favor -> date }}</td>
-                                <td>{{ $favor -> hour  }}</td>
-                                <td>{{ $favor -> area -> name }}</td>
-                                <td>{{ $favor -> description }}</td>
-                          </tr>
-                        @endforeach
-                    </tbody>
-                </table> --}}
             </div>
         </div>
     </div>
