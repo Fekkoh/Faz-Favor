@@ -1128,28 +1128,6 @@ ul.social_icon li a:hover {
         border-top: 2px solid #fff;
     }
 
-    /* .input-container input {
-        border: none;
-        box-sizing: border-box;
-        outline: 0;
-        padding: .75rem;
-        position: relative;
-        width: 100%;
-    }
-
-    input[type="date"]::-webkit-calendar-picker-indicator {
-        background: transparent;
-        bottom: 0;
-        color: transparent;
-        cursor: pointer;
-        height: auto;
-        left: 0;
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: auto;
-    } */
-
     .text-bg-c {
         text-align: left;
     }
@@ -1204,6 +1182,28 @@ ul.social_icon li a:hover {
         transition: ease-in all 0.5s;
     }
 
+    .botaoi a {
+        font-size: 17px;
+        background-color: transparent;
+        border: #000 solid 2px;
+        color: #000;
+        font-weight: 500;
+        padding: 14px 0px;
+        width: 100%;
+        max-width: 215px;
+        text-align: center;
+        display: inline-block;
+        transition: ease-in all 0.5s;
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+
+    .botaoi a:hover {
+        background-color: #ffc400;
+        color: #000;
+        transition: ease-in all 0.5s;
+    }
+
     .search_page {
         background-color: #5e5ab5;
         padding-top: 10px;
@@ -1227,21 +1227,9 @@ ul.social_icon li a:hover {
         font-weight: normal;
     }
 
-    #circle {
-        width: 100px;
-        height: 100px;
-        -webkit-border-radius: 50px;
-        -moz-border-radius: 50px;
-        border-radius: 50px;
-        background: #ffc400;
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
-    }
-
     .favor{
-        background-color: #5C57D1;
-        color: #fff;
+        color: #000;
+        background-color: #fff;
     }
 
     div.favor {
@@ -1254,6 +1242,10 @@ ul.social_icon li a:hover {
         color: #fff;
     }
 
+    .favor a:hover{
+        color: #5e5ab5;
+    }
+
     .favor_page{
         background-color: #5e5ab5;
         padding-top: 10px;
@@ -1261,9 +1253,9 @@ ul.social_icon li a:hover {
     }
 
     .favor_request{
-        background-color: #5C57D1;
-        color: #fff;
-
+        color: #000;
+        background-color: #fff;
+        border: 2px solid #fff;
     }
 
     div.favor_request {
@@ -1278,11 +1270,11 @@ ul.social_icon li a:hover {
         display: block;
     }
 
-    .botao_favor_request a {
+    .botao_favor_request button{
         font-size: 15px;
         background-color: transparent;
-        border: #fff solid 2px;
-        color: #fff;
+        border: #000 solid 2px;
+        color: #000;
         font-weight: 500;
         padding: 5px 0px;
         width: 40%;
@@ -1291,16 +1283,40 @@ ul.social_icon li a:hover {
         display: block;
         transition: ease-in all 0.5s;
         margin-right: 10px;
+        float: right;
     }
 
-    .botao_favor_request a:hover {
+    .botao_favor_request button:hover{
         background-color: #ffc400;
-        color: #fff;
+        color: #000;
         transition: ease-in all 0.5s;
     }
 
+    .botao_apagar button{
+        font-size: 15px;
+        background-color: transparent;
+        border: #000 solid 2px;
+        color: #fff;
+        background-color: red;
+        font-weight: 500;
+        padding: 5px 0px;
+        width: 40%;
+        max-width: 215px;
+        text-align: center;
+        display: block;
+        transition: ease-in all 0.25s;
+        margin-right: 10px;
+        float: right;
+    }
+
+    .botao_apagar button:hover{
+        background-color: #B10202;
+        color: #fff;
+        transition: ease-in all 0.25s;
+    }
+
     .data{
-        font-size: 10px;
+        font-size: 20px;
     }
 
     .titulo{
@@ -1309,7 +1325,7 @@ ul.social_icon li a:hover {
     }
 
     .titulo h1{
-        font-size: 40px;
+        font-size: 100px;
     }
 
     .area{
@@ -1319,4 +1335,8 @@ ul.social_icon li a:hover {
     .descricao{
         margin-top: 30px;
         font-weight: normal;
+    }
+
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #fff;
     }

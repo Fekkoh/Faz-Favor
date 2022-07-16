@@ -42,6 +42,18 @@
                             </div>
 
                             <div class="col-md-12">
+                                <input class="login-form @error('phone') is-invalid @enderror" placeholder="Telemóvel"
+                                    type="text" name="phone" value="{{ old('phone') }}" required
+                                    autocomplete="phone" autofocus id="phone">
+
+                                @error('phone')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
+                            <div class="col-md-12">
                                 <input class="login-form @error('password') is-invalid @enderror" placeholder="Password"
                                     type="password" name="password" required autocomplete="new-password" id="password">
 

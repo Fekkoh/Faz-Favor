@@ -11,21 +11,17 @@ return new class extends Migration
      *
      * @return void
      */
+    
     public function up()
     {
         Schema::create('favor__granteds', function (Blueprint $table) {
             $table->id('id');
             $table->timestamps();
 
-            $table->foreignId('favor_request_id')
+            $table->foreignId('favor_peding_id')
                 ->references('id')
-                ->on('favor__requests')
+                ->on('favor__pendings')
                 ->onDelete('cascade');
-
-            $table->foreignId('user_granted_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('restrict');
         });
     }
 

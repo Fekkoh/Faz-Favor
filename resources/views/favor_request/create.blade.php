@@ -17,8 +17,8 @@
                 <form class="main_form" method="POST" action="/favor_request">
                 @csrf
                     <div class="row">
-                        <div class="col-md-12">
-                            <input class="login-form" placeholder="Titulo" type="text" name="title" value="{{ old('title') }}" required autofocus id="title">
+                        <div class="col-md-12" style="color: white">
+                            <input class="login-form" placeholder="Título" type="text" name="title" value="{{ old('title') }}" required autofocus id="title">
                         </div>
 
                         <div class="col-md-12">
@@ -35,9 +35,9 @@
 
                                 @foreach ($area as $area)
                                     @if ($area->id == old('area'))
-                                        <option value="{{ $area->id }}" selected>{{ $area->name }}</option>
+                                        <option value="{{ $area->id }}" style="color: black">{{ $area->name }}</option>
                                     @else
-                                        <option value="{{ $area->id }}">{{ $area->name }}</option>
+                                        <option value="{{ $area->id }}" style="color: black">{{ $area->name }}</option>
                                     @endif
                                 @endforeach
                             </select>

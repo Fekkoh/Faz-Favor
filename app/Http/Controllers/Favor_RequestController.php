@@ -16,8 +16,13 @@ class Favor_RequestController extends Controller
      */
     public function index()
     {
+        if(isset($_POST['apagar']))
+        {
+            $favores = Favor_Request::find($_POST['apagar']);
+        }
         $favores = Favor_Request::all(); // Select * from favor__requests
-        return view('search', compact('favores'));
+        /* return view('favor_request.show', compact('favores')); */
+        return view('my_requests', compact('favores'));
     }
 
     /**
@@ -44,7 +49,6 @@ class Favor_RequestController extends Controller
         $favores->description = request('description');
         $favores->date = request('date');
         $favores->hour = request('hour');
-        $favores->finished = 0;
         $favores->user_request_id = Auth::id();
         $favores->area_id = request('area');
         $favores->save();
@@ -59,7 +63,6 @@ class Favor_RequestController extends Controller
      */
     public function show(Favor_Request $favor_request)
     {
-
         return view('favor_request.show', compact('favor_request'));
     }
 
@@ -95,5 +98,24 @@ class Favor_RequestController extends Controller
     public function destroy(Favor_Request $favor_request)
     {
         //
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function apagar()
+    {
+        if(isset($_POST['apagar']))
+        {
+            $favores = Favor_Request::find($_POST['apagar']);
+            $favores->finished = 1;
+            $favores->save();
+            return redirect('/my_requests');
+        }
+        else{
+            return redirect('/my_requests');
+        }
     }
 }

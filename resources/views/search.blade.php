@@ -7,85 +7,72 @@
             <div class="col-md-10 offset-md-1">
                 <form id="request" class="form_search">
                     <div class="row">
-                        <div class="col-md-12">
-                            <input class="searchbar" type="text" id="Search" onkeyup="search()" placeholder="Pesquisar">
+                        <div class="col-md-12 ">
+                            <input class="searchbar" type="text" id="myInput" onkeyup="myFunction()" placeholder="Pesquisar pedido, área, e data">
                         </div>
                     </div>
                 </form>
 
-                <div class="row">
-                    @foreach ($areas as $area)
-                        <div class="col-md-4">
-                            <figure style="text-align: center;">
-                                <div id="circle">
-                                    <div class="icon_area" style="display: flex; justify-content: center; align-items: center;">
-                                        <img src="assets/images/{{ $area -> name }}.png" alt="" width="70px">
-                                    </div>
-                                </div>
-                                <figcaption>{{ $area -> name }}</figcaption>
-                            </figure>
-                        </div>
+                <ul id="myUL">
+                    @foreach ($favores as $favor)
+                        @if (Auth::id() != $favor->user_request_id )
+                            @if ($favor->finished == 0)
+                                <li class="borda">
+                                    <a href="/favor/{{ $favor -> id }}" class="favor">
+                                        <div class="col-md-12">
+                                            <div class="favor row">
+                                                <div class="col-md-12">
+                                                    <h3 style="font-size: 25px">{{ $favor -> title }}</h3>
+                                                </div>
+                                            </div>
+
+                                            <div class="favor row">
+                                                <div class="col-md-12">
+                                                    <p>{{ $favor -> area -> name }}</p>
+                                                    <p style="font-size: 20px">{{ $favor -> description }}</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="favor row">
+                                                <div class="col-md-2">
+                                                    <p>{{ $favor -> date }}</p>
+                                                </div>
+
+                                                <div class="col-md-1">
+                                                    <p>{{ $favor -> hour }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            @endif
+                        @endif
                     @endforeach
-                </div>
-
-                @foreach ($favores as $favor)
-                    <a href="/favor/{{ $favor -> id }}" class="favor">
-                        <div class="col-md-12">
-                            <div class="favor row">
-                                <div class="col-md-12">
-                                    <h3>{{ $favor -> title }}</h3>
-                                </div>
-                            </div>
-
-                            <div class="favor row">
-                                <div class="col-md-12">
-                                    <p>{{ $favor -> area -> name }}</p>
-                                    <p>{{ $favor -> description }}</p>
-                                </div>
-                            </div>
-
-                            <div class="favor row">
-                                <div class="col-md-2">
-                                    <p>{{ $favor -> date }}</p>
-                                </div>
-
-                                <div class="col-md-1">
-                                    <p>{{ $favor -> hour }}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                @endforeach
+                </ul>
             </div>
         </div>
     </div>
 </div>
 
 <script>
-    function search()
-    {
-        // Declare variables
-        var input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("Search");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("Table");
-        tr = table.getElementsByTagName("tr");
+    function myFunction() {
+      // Declare variables
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById('myInput');
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myUL");
+      li = ul.getElementsByTagName('li');
 
-        // Loop through all table rows, and hide those who don't match the search query
-        for (i = 0; i < tr.length; i++)
-        {
-            td = tr[i].getElementsByTagName("td")[0];
-            if (td)
-            {
-                txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1)
-                {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                }
-            }
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
         }
+      }
     }
-</script>
+    </script>
 @endsection

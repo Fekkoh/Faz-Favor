@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>cla</title>
+    <title>Faz Favor</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -22,7 +22,7 @@
     <!-- Responsive-->
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
     <!-- fevicon -->
-    <link rel="icon" href="{{ asset('assets/images/logo.png') }}">
+    <link rel="icon" href="{{ asset('assets/images/logo2.png') }}">
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/jquery.mCustomScrollbar.min.css') }}">
     <!-- Tweaks for older IEs-->
@@ -53,7 +53,7 @@
                         <div class="full">
                             <div class="center-desk">
                                 <div class="logo" style="width: 80px">
-                                    <a href="/"><img src="{{ asset('assets/images/logo.png') }}" alt="" /></a>
+                                    <a href="/"><img src="{{ asset('assets/images/logo.png') }}" alt="" style="border-radius: 25%"/></a>
                                 </div>
                             </div>
                         </div>
@@ -70,7 +70,7 @@
                                         <a class="nav-link" href="/about">Sobre</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('favor_request.create')}}">Preciso de ajuda</a>
+                                        <a class="nav-link" href="{{ route('favor_request.create')}}">Preciso de um favor</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="/search">Quero ajudar</a>
@@ -91,15 +91,14 @@
                                                     </a>
 
                                                     <div class="dropdown-menu" aria-labelledby="navbarsExample04">
-                                                        <a class="dropdown-item" href="#">
+                                                        {{-- <a class="dropdown-item" href="#">
                                                             Meu perfil
-                                                        </a>
-                                                        <a class="dropdown-item" href="#">
+                                                        </a> --}}
+
+                                                        <a class="dropdown-item" href="{{ route('my_requests') }}">
                                                             Os meus favores
                                                         </a>
-                                                        <a class="dropdown-item" href="#">
-                                                            Favores aceites
-                                                        </a>
+
                                                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" style="color: red">
                                                             {{ __('Logout') }}
                                                         </a>
@@ -112,9 +111,7 @@
                                         @endguest
                                     </li>
 
-                                    <?php
-                                        var_dump($favores);
-                                    ?>
+
                                     {{-- <li class="nav-item dropdown">
                                         <div class="dropdown-menu" aria-labelledby="navbarsExample04">
                                             @foreach ($favores as $favor)
@@ -146,7 +143,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6" >
-                        <img class="logo1" src="{{ asset('assets/images/logo.png') }}" alt="#" />
+                        <img class="logo1" src="{{ asset('assets/images/logo.png') }}" alt="#" style="border-radius: 25%"/>
                         <ul class="social_icon">
                             <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                             <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>

@@ -14,8 +14,8 @@ class Favor_Request extends Model
         return $this->belongsTo(Area::class);
     }
 
-    public function user()
+    public function userpediu()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, "user_request_id");
     }
 }

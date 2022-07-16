@@ -20,6 +20,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'phone',
         'password',
     ];
 
@@ -44,6 +45,6 @@ class User extends Authenticatable
 
     public function favor_request()
     {
-        return $this->hasMany(Favor_Request::class);
+        return $this->hasMany(Favor_Request::class, "user_request_id");
     }
 }

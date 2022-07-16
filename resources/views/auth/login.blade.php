@@ -46,10 +46,10 @@
                                 <label class="form-check-label text-dinamico"
                                     for="remember">{{ __('Lembrar-me') }}</label>
 
-                                @if (Route::has('password.request'))
+                                {{-- @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}"
                                         style="float: right">Esqueci-me da passowrd?</a>
-                                @endif
+                                @endif --}}
                             </div>
 
                             <div class="col-md-12 text-dinamico">

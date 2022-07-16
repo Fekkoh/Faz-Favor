@@ -39,11 +39,16 @@ Route::get('/product', function () {
 });
 /* End Template */
 
+/* Route::get('/my_requests', function () {
+    return view('my_requests');
+}); */
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/search', [App\Http\Controllers\AreaController::class, 'index'])->name('search');
 Route::post('/favor_request', [App\Http\Controllers\Favor_RequestController::class, 'store']);
 Route::get('/favor/{favor_request}', [App\Http\Controllers\Favor_RequestController::class, 'show'])->name('favor_request.show');
+Route::get('/my_requests', [App\Http\Controllers\Favor_RequestController::class, 'index'])->name('my_requests');
+Route::post('/my_requests', [App\Http\Controllers\Favor_RequestController::class, 'apagar'])->name('my_requests');
 Route::get('/favor_request/create', [App\Http\Controllers\Favor_RequestController::class, 'create'])->middleware('auth')->name('favor_request.create');
-

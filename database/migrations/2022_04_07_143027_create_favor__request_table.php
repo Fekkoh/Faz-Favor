@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('description');
             $table->date('date');
             $table->time('hour');
-            $table->boolean('finished');
             $table->timestamps();
+            $table->boolean('finished')->default(0);
 
             $table->foreignId('user_request_id')
                   ->references('id')
