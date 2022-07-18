@@ -16,13 +16,17 @@
                 <ul id="myUL">
                     @foreach ($favores as $favor)
                         @if (Auth::id() == $favor->user_request_id )
-                            @if ($favor->finished == 0)
                                 <li class="borda">
                                     <a href="/favor/{{ $favor -> id }}" class="favor">
                                         <div class="col-md-12">
                                             <div class="favor row">
-                                                <div class="col-md-12">
+                                                <div class="col-md-6">
                                                     <h3 style="font-size: 25px">{{ $favor -> title }}</h3>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    @if ($favor->finished == 1)
+                                                        <h3 style="float: right; color: red; font-size: 25px">Concluído</h3>
+                                                    @endif
                                                 </div>
                                             </div>
 
@@ -45,7 +49,6 @@
                                         </div>
                                     </a>
                                 </li>
-                            @endif
                         @endif
                     @endforeach
                 </ul>

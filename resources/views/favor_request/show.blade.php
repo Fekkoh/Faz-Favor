@@ -26,10 +26,14 @@
 
                         @auth
                             @if (Auth::id() == $favor_request->userpediu->id )
-                                <div class="botao_apagar">
+                                <div class="botao_favor_request">
                                     <form action="/my_requests" method="POST">
                                     @csrf
-                                        <button class="" style="" value="{{ $favor_request->id }}" name="apagar">Apagar favor</button>
+                                        @if ($favor_request->finished == 0)
+                                            <button class="" style="" value="{{ $favor_request->id }}" name="apagar">Concluir favor</button>
+                                        @elseif ($favor_request->finished == 1)
+                                            <h3 style="float: right; color: red;">Concluído</h3>
+                                        @endif
                                     </form>
 
                                 </div>
